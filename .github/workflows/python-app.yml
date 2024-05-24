@@ -20,7 +20,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t python-app .
+        docker build -t main.py .
 
     - name: Install dependencies
       run: |
