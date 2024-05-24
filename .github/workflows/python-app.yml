@@ -20,17 +20,17 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t python-app .
+        docker build -t main .
 
     - name: Install dependencies
       run: |
-        docker run --rm python-app pip install --upgrade pip
-        docker run --rm python-app pip install -r requirements.txt
+        docker run --rm main pip install --upgrade pip
+        docker run --rm main pip install -r requirements.txt
 
     - name: Run pylint
       run: |
-        docker run --rm python-app pylint $(find . -name "*.py")
+        docker run --rm main pylint $(find . -name "*.py")
 
     - name: Run tests with coverage
       run: |
-        docker run --rm python-app sh -c "coverage run -m unittest discover && coverage report"
+        docker run --rm main sh -c "coverage run -m unittest discover && coverage report"
