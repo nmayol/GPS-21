@@ -34,3 +34,4 @@ jobs:
     - name: Run tests with coverage
       run: |
         docker run --rm python-app sh -c "coverage run -m unittest discover && coverage report"
+
