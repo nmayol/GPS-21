@@ -20,7 +20,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t python-app .
+        docker build -t main.py .
 
     - name: Install dependencies
       run: |
@@ -34,3 +34,4 @@ jobs:
     - name: Run tests with coverage
       run: |
         docker run --rm python-app sh -c "coverage run -m unittest discover && coverage report"
+
