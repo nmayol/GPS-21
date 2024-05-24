@@ -26,12 +26,12 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build --cache-from type=local,src=/tmp/.buildx-cache --cache-to type=local,dest=/tmp/.buildx-cache -t my-python-app .
+        docker build --cache-from type=local,src=/tmp/.buildx-cache --cache-to type=local,dest=/tmp/.buildx-cache -t python-app .
 
     - name: Run pylint
       run: |
-        docker run --rm my-python-app pylint $(find . -name "*.py")
+        docker run --rm python-app pylint $(find . -name "*.py")
 
     - name: Run tests with coverage
       run: |
-        docker run --rm my-python-app sh -c "coverage run -m unittest discover && coverage report"
+        docker run --rm python-app sh -c "coverage run -m unittest discover && coverage report"
