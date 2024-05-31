@@ -1,0 +1,10 @@
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring
+
+[REPORTS]
+
+output-format=text
+reports=no
