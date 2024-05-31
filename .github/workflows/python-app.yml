@@ -31,7 +31,7 @@ jobs:
         pip install coverage
     - name: Lint with pylint
       run: |
-        pylint **/*.py
+        pylint --rcfile=.pylintrc **/*.py
         
     - name: Test with pytest
       run: |
